@@ -22,7 +22,7 @@ _________________________
 ![Second Evaluation](img/evaluation2.png)
 _________________________
 
-Our results provide a guide for the process of knowledge engineering of argumentation schemes in multi-agent systems (when using our implementation), showing how those reasoning patterns could be modelled depending on the multi-agent applications needs. On the one hand, when defining nested argumentation schemes, which will allow agents to execute a more detailed and refined reasoning process based on argumentation, as in~\cite{Panisson-2018-ASforDAC}, more time is required to agents to analyse and evaluate a particular conclusion from those argumentation schemes. On the other hand, when defining a single argumentation scheme, such reasoning is simplified but faster results are reached.
+Our results provide a guide for the process of knowledge engineering of argumentation schemes in multi-agent systems (when using our implementation), showing how those reasoning patterns could be modelled depending on the multi-agent applications needs. On the one hand, when defining nested argumentation schemes, which will allow agents to execute a more detailed and refined reasoning process based on argumentation, more time is required to agents to analyse and evaluate a particular conclusion from those argumentation schemes. On the other hand, when defining a single argumentation scheme, such reasoning is simplified but faster results are reached.
 
 ## References
 
