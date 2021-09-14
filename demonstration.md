@@ -5,14 +5,14 @@ _________________________
 _________________________
 
 _________________________
-![Scenario 2](img/example02_s1_as4rk.png)
+![Scenario 2](img/scenario1_ex2.png)
 _________________________
 
 _________________________
-![Scenario 3](img/example02_s3_as4rk.png)
+![Scenario 3](img/scenario1_ex3.png)
 _________________________
 
 _________________________
-![Scenario 4](img/example02_s4_as4rk.png)
+![Scenario 4](img/scenario1_ex4.png)
 _________________________
 
