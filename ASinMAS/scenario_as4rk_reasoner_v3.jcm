@@ -1,0 +1,24 @@
+mas as4rk_t1{
+
+	 agent agent_reasoner : tests/reasoner.asl {
+	  	beliefs:  incompatible(conclusion(causes(smoking,cancer)),conclusion(~causes(smoking,cancer))) 
+	  			  about(causes(smoking,cancer),cancer)
+				  about(~causes(smoking,cancer),cancer)
+				  role_to_know(doctor,cancer)
+	  	
+	  			  // JOHN
+				  asserts(john,causes(smoking,cancer))
+				  role(john,doctor)
+				  reliable(john)
+				  
+				  // PIETRO
+				  asserts(pietro,~causes(smoking,cancer))
+				  role(pietro,doctor)
+				  ~reliable(pietro)
+				  
+	  	goals: has_argument(conclusion(causes(smoking,cancer)))
+	  	//goals: argument(conclusion(causes(smoking,cancer)))
+	  	ag-arch: infra.dist.DistAgentArch
+	  }
+}
+

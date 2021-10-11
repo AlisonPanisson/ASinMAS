@@ -1,0 +1,28 @@
+mas as4dac_ex1_t2{
+
+	 agent fireman : tests/dialogTest4_v1.asl {
+	  	beliefs:  	inf_category(location(v1),end_user_inf)
+					//access_rule(fireman,end_user_inf)
+					role(nick,fireman)
+					constr(role(fireman),fireman)
+					satisfies(nick,role(fireman))
+					
+					emrg_rule(fire,access_rule(fireman,end_user_inf))
+					fire
+					
+		goals: opendialogue([fireman,smartBuilding],access(nick,location(v1)))
+	  }
+	  
+	  agent smartBuilding : tests/dialogTest4_v1.asl {
+	  	beliefs: 	inf_category(location(v1),end_user_inf)
+					//access_rule(fireman,end_user_inf)
+					role(nick,fireman)
+					constr(role(fireman),fireman)
+					satisfies(nick,role(fireman2))
+					
+					emrg_rule(fire,access_rule(fireman,end_user_inf))
+					//fire  //know or not about fire.
+  		ag-arch: infra.dist.DistAgentArch
+	  }
+}
+

@@ -1,0 +1,22 @@
+mas as4dac_ex2_t1{
+
+	 agent requester : tests/dialogTest4_v1.asl {
+	  	beliefs:  	constr(role(family_doctor),family_doctor)
+	  				inf_category(record,patient_data)
+	  				access_rule(family_doctor,patient_data)
+	  				role(joe,family_doctor)
+	  									
+		goals: opendialogue([requester,interface],access(joe,record))
+	  	//goals: argument(conclusion(causes(smoking,cancer)))
+	  
+	  }
+	  
+	  agent interface : tests/dialogTest4_v1.asl {
+	  	beliefs: 	constr(role(family_doctor),family_doctor)
+	  				inf_category(record,patient_data)
+	  				access_rule(family_doctor,patient_data)
+	  				role(joe,family_doctor)
+	  				
+  		ag-arch: infra.dist.DistAgentArch
+	  }
+}

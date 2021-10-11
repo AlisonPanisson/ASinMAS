@@ -1,0 +1,23 @@
+mas tests03{
+
+	 agent ag1 : tests/teste_getScheme.asl {
+				  
+	  	//goals: getScheme(as4dac)
+	  	goals: add_scheme(["defeasible_rule(conclusion(Conc),[asserts(Ag,Conc),role(Ag,Role),role_to_know(Role,Subj),about(Conc,Subj)])[as(as4rk)]","cq(cq1,role_to_know(Role,Subj))[as(as4rk)]","cq(cq2,reliable(Ag))[as(as4rk)]","cq(cq3,asserts(Ag,Conc))[as(as4rk)]","cq(cq4,role(Ag,Role))[as(as4rk)]"])
+	  	//goals: 	add_scheme("as(defeasible_rule(conclusion(Conc),[asserts(Ag,Conc),role(Ag,Role),role_to_know(Role,Subj),about(Conc,Subj)])[as(as4rk)], [cq(cq1,role_to_know(Role,Subj))[as(as4rk)], cq(cq2,reliable(Ag))[as(as4rk)], cq(cq3,asserts(Ag,Conc))[as(as4rk)], cq(cq4,role(Ag,Role))[as(as4rk)]])")
+	  	//goals: 	add_scheme("[defeasible_rule(conclusion(Conc),[asserts(Ag,Conc),role(Ag,Role),role_to_know(Role,Subj),about(Conc,Subj)])[as(as4rk)], cq(cq1,role_to_know(Role,Subj))[as(as4rk)], cq(cq2,reliable(Ag))[as(as4rk)], cq(cq3,asserts(Ag,Conc))[as(as4rk)], cq(cq4,role(Ag,Role))[as(as4rk)]]")
+	  	
+	  	/* add_scheme(as(defeasible_rule(access(A,I),[inf_category(I,C),ac_category(A,R),access_rule(R,C)])[as(as4dac)],
+	  		[	cq(cq1,inf_category(I,C))[as(as4dac)],
+	  			cq(cq2,ac_category(A,R))[as(as4dac)],
+	  			cq(cq3,access_rule(R,C))[as(as4dac)],
+	  			cq(cq4,not ((inf_category(I,C2) & (~subc(C,C2) & ~access_rule(R,C2)))))[as(as4dac)],
+	  			cq(cq5,not ((ac_category(A,R2) & (~subc(R,R2) & ~access_rule(R2,C)))))[as(as4dac)], 
+	  			cq(cq6,not ((emrg_rule(S,access_rule(R,C)) & ~emrg(S))))[as(as4dac)]
+	  		])) */
+	  	
+	  	ag-arch: infra.dist.DistAgentArch
+	  }
+	 
+}
+

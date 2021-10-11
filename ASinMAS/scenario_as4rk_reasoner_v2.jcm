@@ -1,0 +1,51 @@
+mas as4rk_t2{
+
+	 agent agent_reasoner : tests/reasoner.asl {
+	  	beliefs:  incompatible(conclusion(invest(soybean)),conclusion(~invest(soybean))) 
+	  			  about(invest(soybean),stock)
+				  about(~invest(soybean),stock)
+				  role_to_know(stock_adviser,stock)
+				  
+				  incompatible(conclusion(reliable(X)),conclusion(~reliable(X))) 
+	  			  about(reliable(X),reliability)
+				  about(~reliable(X),reliability)
+				  role_to_know(reliability_adviser,reliability)
+	  	
+	  			  // Roles
+				  role(adv1,stock_adviser)
+				  role(adv2,stock_adviser)
+				  role(adv3,stock_adviser)
+				  
+				  role(exp1,reliability_adviser)	
+				  role(exp2,reliability_adviser)			
+				  
+				  //~reliable(adv2)
+				  //reliable(adv1)
+				  //reliable(adv3)
+				  
+				   // Assertions
+				  asserts(adv1,invest(soybean))
+				  asserts(adv2,~invest(soybean))
+				  asserts(adv3,invest(soybean))
+				  
+				  asserts(exp1,reliable(adv1))
+				  asserts(exp1,~reliable(adv2))
+				  asserts(exp1,~reliable(adv3))
+				  
+				  asserts(exp2,reliable(adv1))
+				  asserts(exp2,~reliable(adv2))
+				  asserts(exp2,reliable(adv3))
+				  
+				  reliable(exp1)
+				  reliable(exp2)
+				  reliable(exp3)
+				  
+			  
+	  	goals: has_argument(conclusion(invest(soybean)))
+	  	       has_argument(conclusion(reliable(adv1)))
+	  	ag-arch: infra.dist.DistAgentArch
+	  }
+	  
+
+}
+

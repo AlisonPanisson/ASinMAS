@@ -1,0 +1,41 @@
+mas tests03{
+
+	 agent ag1 : tests/dialogTest3_v1.asl {
+	  	beliefs:  incompatible(conclusion(causes(smoking,cancer)),conclusion(~causes(smoking,cancer))) 
+	  			  about(causes(smoking,cancer),cancer)
+				  about(~causes(smoking,cancer),cancer)
+				  role_to_know(doctor,cancer)[source(org)]
+	  	
+	  			  // JOE
+				  asserts(joe,causes(smoking,cancer))
+				  role(joe,doctor)[source(org)]
+				  
+				  // PIETRO
+				  role(pietro,doctor)[source(org)]
+				  ~reliable(pietro)
+				  
+	  	goals: opendialogue([ag1,ag2],conclusion(causes(smoking,cancer)))
+	  	//goals: argument(conclusion(causes(smoking,cancer)))
+	  	ag-arch: infra.dist.DistAgentArch
+	  }
+	  
+	  agent ag2 : tests/dialogTest3_v1.asl {
+	  	beliefs:  incompatible(conclusion(causes(smoking,cancer)),conclusion(~causes(smoking,cancer))) 
+	  			  about(causes(smoking,cancer),cancer)
+				  about(~causes(smoking,cancer),cancer)
+				  role_to_know(doctor,cancer)[source(org)]
+				  
+				  
+				   // JOE
+				 // asserts(joe,causes(smoking,cancer))
+				 // role(joe,doctor)[source(org)]
+				  
+				  // PIETRO
+				  asserts(pietro,~causes(smoking,cancer))
+				  role(pietro,doctor)[source(org)]
+				 // ~reliable(pietro)	  			 
+
+  		ag-arch: infra.dist.DistAgentArch
+	  }
+}
+

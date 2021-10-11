@@ -1,0 +1,56 @@
+mas as4rk_t4{
+
+	 agent proponent : tests/dialogTest3_v3.asl {
+	  	beliefs:  incompatible(conclusion(causes(smoking,cancer)),conclusion(~causes(smoking,cancer))) 
+	  			  about(causes(smoking,cancer),cancer)
+				  about(~causes(smoking,cancer),cancer)
+				  role_to_know(doctor,cancer)
+				  
+				  incompatible(conclusion(role(pietro,doctor)),conclusion(role(pietro,cleaning_staff))) 
+	  			  about(role(pietro,cleaning_staff),employees)
+				  role_to_know(hospital_director,employees)
+	  	
+	  			  // JOHN
+				  asserts(john,causes(smoking,cancer))
+				  role(john,doctor)
+				  reliable(john)
+				  
+				  // PIETRO
+				  //role(pietro,clean_staff)
+				  
+				  // MATHEW
+				  asserts(mathew,role(pietro,cleaning_staff))
+				  role(mathew,hospital_director)	
+				  reliable(mathew)
+				  
+				  				  
+				 
+				  
+	  	goals: opendialogue([proponent,opponent],conclusion(causes(smoking,cancer)))
+	  	       //has_argument(conclusion(role(pietro,clean_staff)))
+	  	ag-arch: infra.dist.DistAgentArch
+	  }
+	  
+	  agent opponent : tests/dialogTest3_v3.asl {
+	  	beliefs:  incompatible(conclusion(causes(smoking,cancer)),conclusion(~causes(smoking,cancer))) 
+	  			  incompatible(conclusion(role(pietro,doctor)),conclusion(role(pietro,cleaning_staff))) 
+	  			  about(causes(smoking,cancer),cancer)
+				  about(~causes(smoking,cancer),cancer)
+				  role_to_know(doctor,cancer)[source(org)]
+				  
+				  
+				   // JOHN
+				 // asserts(john,causes(smoking,cancer))
+				 // role(john,doctor)[source(org)]
+				  
+				  // PIETRO
+				  asserts(pietro,~causes(smoking,cancer))
+				  dresses(pietro,white)
+				  works(pietro,hospital)
+				  //role(pietro,doctor)
+				  //reliable(pietro)	
+		//goals: has_argument(role(pietro,doctor))
+  		ag-arch: infra.dist.DistAgentArch
+	  }
+}
+

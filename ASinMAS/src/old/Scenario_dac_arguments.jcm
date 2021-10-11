@@ -1,0 +1,41 @@
+mas tests03{
+
+	 agent ag1 : tests/dialogTest4_v1.asl {
+	  	beliefs:  	constr(role(family_doctor),family_doctor)
+	  				constr(role(doctor),doctor)
+	  				inf_category(record,patient_data)
+	  				access_rule(family_doctor,patient_data)
+	  				role(joe,doctor)
+	  				
+	  				emrg_rule(unc,access_rule(doctor,patient_data))
+	  				unc
+	  									
+		goals: opendialogue([ag1,ag2],access(joe,record))
+	  	//goals: argument(conclusion(causes(smoking,cancer)))
+	  }
+	  
+	  agent ag2 : tests/dialogTest4_v1.asl {
+	  	beliefs: 	constr(role(family_doctor),family_doctor)
+	  				constr(role(doctor),doctor)
+	  				constr(role(nurse),nurse)
+	  				inf_category(record,patient_data)
+	  				access_rule(family_doctor,patient_data)
+	  				role(joe,nurse)
+	  				
+	  				emrg_rule(unc,access_rule(doctor,patient_data))
+	  				//unc
+	  				
+	  				
+//	  				constr(role(doctor),doctor)
+//	  				constr(role(nurse),nurse)
+//	  				inf_category(record,patient_data)
+//	  				access_rule(family_doctor,patient_data)
+//	  				role(joe,nurse)
+//	  				
+//	  				emrg_rule(unc,access_rule(doctor,patient_data))
+	  				//unc
+	  				
+  		ag-arch: infra.dist.DistAgentArch
+	  }
+}
+
