@@ -9,11 +9,11 @@ _________________________
 _________________________
 
 _________________________
-![Scenario 3](img/scenario1_ex3.png)
+![Scenario 3](img/scenario1_ex3_v0.png)
 _________________________
 
 _________________________
-![Scenario 4](img/scenario1_ex4_v2.png)
+![Scenario 4](img/scenario1_ex4_v0.png)
 _________________________
 
 
